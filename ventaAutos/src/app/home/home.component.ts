@@ -10,20 +10,28 @@ import { VehiculosService } from '../home/vehiculos.service'
 export class HomeComponent implements OnInit {
 
   listVehiculos: Array<Vehiculo> = [];
-  conteo: any;
+  Carro1 : number = 0;
+  Carro2 : number = 0;
+  Carro3 : number = 0;
+
+
+
   constructor(private vehiculoService : VehiculosService) { }
 
-  getVehiculo(){
-    this.vehiculoService.getVehiculos().subscribe((listVehiculos) => { this.listVehiculos = listVehiculos; });
-    console.log(this.listVehiculos)    
+  getVehiculo(){    
+      this.vehiculoService.getVehiculos().subscribe((listVehiculos) => { 
+      this.listVehiculos = listVehiculos;
+      this.calcularVehiculo ();    
+    });           
   }
 
-  calcularMarcas(){
-    this.listVehiculos.forEach(elemento => {
-
-    });
+  calcularVehiculo (){
+    this.Carro1 = this.listVehiculos.filter(carro => carro.marca === "Renault").length
+    this.Carro2 = this.listVehiculos.filter(carro => carro.marca === "Chevrolet").length
+    this.Carro3 = this.listVehiculos.filter(carro => carro.marca === "Nissan").length
   }
-  
+
+ 
 
   ngOnInit() {
     this.getVehiculo();
