@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { VehiculoComponent } from './vehiculo/vehiculo.component';
@@ -23,6 +24,7 @@ import { HomeComponent } from './home/home.component';
       { path: '**', redirectTo: '/', pathMatch: 'full' },
 
     ]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

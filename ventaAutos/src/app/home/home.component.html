@@ -1,3 +1,27 @@
-<p>
-  home works!
-</p>
+
+<div class="container">
+  <img src="../../assets/portada-segundazo.png" class="img-fluid" width="1100" height="150">
+</div>
+
+
+<div class="container">
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Linea</th>
+      <th scope="col">Modelo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let v of listVehiculos">
+      <th >{{v.id}}</th>
+      <td>{{v.marca}}</td>
+      <td>{{v.linea}}</td>
+      <td>{{v.modelo}}</td>
+    </tr>
+    
+  </tbody>
+</table>
+</div>
