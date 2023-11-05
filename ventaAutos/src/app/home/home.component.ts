@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   Carro1 : number = 0;
   Carro2 : number = 0;
   Carro3 : number = 0;
+  conteo: { [key: string]: number } = {};
 
 
 
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   calcularVehiculo (){
+    
     this.Carro1 = this.listVehiculos.filter(carro => carro.marca === "Renault").length
     this.Carro2 = this.listVehiculos.filter(carro => carro.marca === "Chevrolet").length
     this.Carro3 = this.listVehiculos.filter(carro => carro.marca === "Nissan").length

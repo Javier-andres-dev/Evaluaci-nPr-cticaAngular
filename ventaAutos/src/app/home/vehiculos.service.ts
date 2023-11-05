@@ -14,7 +14,6 @@ export class VehiculosService {
    constructor(private http: HttpClient) { }
 
    getVehiculos(): Observable<Vehiculo[]> {
-    console.log(this.apiUrl)
     return  this.http.get<Vehiculo[]>(this.apiUrl);
 
   }
